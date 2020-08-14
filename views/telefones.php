@@ -11,7 +11,7 @@
             </div>
             <input type="hidden" name="idpes" id="idpes" class="form-control mb-2 mr-sm-2" value="<?php echo $idpessoa; ?>" />
 
-            <input type="submit" value="Adicionar" class="btn btn-info" />
+            <input type="submit" value="Adicionar" class="btn btn-info mb-2 mr-sm-2" />
         </form>
     </div>
     <?php

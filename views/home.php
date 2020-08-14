@@ -7,7 +7,7 @@
             <label for="pesqCPF">CPF:</label>
             <input type="text" name="filtros[pesqCPF]" id="pesqCPF" maxlength="11" class="form-control mb-2 mr-sm-2" />
 
-            <input type="submit" value="Buscar" class="btn btn-primary" />
+            <input type="submit" value="Buscar" class="btn btn-primary mb-2 mr-sm-2" />
         </form>
     </div>
     <?php
