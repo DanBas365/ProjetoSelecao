@@ -13,8 +13,14 @@ Para que o projeto funcione adequadamente, seguem as orientações:
 - Será aberta a interface para comunicação com o banco de dados do servdor XAMPP;
 - Criar uma base de dados com nome: projeto_selecao
 - Criar duas tabelas:
-- Pessoa (ID [bigint] PK com auto-incremento, Nome [varchar], dtNasc [date], Email [varchar]);
+- Pessoa (ID [bigint] PK com auto-incremento, Nome [varchar], CPF [varchar], dtNasc [date], Email [varchar]);
 - Telefone (ID [bigint] PK com auto-incremento, DDD [varchar], Numero [varchar], id_pessoa [varchar]);
+conforme os scripts:
+script para tabela 'pessoa'
+CREATE TABLE `projeto_selecao`.`pessoa` ( `id` BIGINT NOT NULL AUTO_INCREMENT , `nome` VARCHAR(50) NOT NULL , `cpf` VARCHAR(11) NOT NULL , `dtNasc` DATE NOT NULL , `email` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+script para tabela 'telefone'
+CREATE TABLE `projeto_selecao`.`telefone` ( `id` BIGINT NOT NULL AUTO_INCREMENT , `ddd` VARCHAR(2) NOT NULL , `numero` VARCHAR(9) NOT NULL , `id_pessoa` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 4- Realizadas as etapas anteriores, acesse a pasta: C:\xampp\htdocs;
 - Crie uma pasta com nome: projetoselecao;
