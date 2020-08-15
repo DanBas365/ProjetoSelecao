@@ -48,23 +48,32 @@ class pestelController extends controller{
             $dtnasc = addslashes($_POST['dtnasc']);
 
             if(!empty($nome) && !empty($cpf) && !empty($email) && !empty($dtnasc)){
-                if($p->Cadastrar($nome, $cpf, $dtnasc, $email)){
-                    $dados['msg'] = 
-                    '<div class="row alert-success">
-                        <strong>Parabéns!</strong> Pessoa cadastrada com sucesso.
-                    </div>';
+                if($p->validaCPF($cpf)){
+                    if($p->Cadastrar($nome, $cpf, $dtnasc, $email)){
+                        $dados['msg'] = 
+                        '<div class="row alert-success">
+                            <strong>Parabéns!</strong> Pessoa cadastrada com sucesso.
+                        </div>';
+                    } else{
+                        $dados['msg'] = 
+                        '<div class="row alert-warning">
+                            Pessoa já cadastrada!!
+                        </div>';
+                    }
                 } else{
                     $dados['msg'] = 
                     '<div class="row alert-warning">
-                        Pessoa já cadastrada!!
-                    </div>';
+                        CPF inválido!
+                    </div>';    
                 }
             } else{
                 $dados['msg'] = 
                 '<div class="row alert-warning">
                     Preencha todos os campos!
                 </div>';
-            }            
+            }
+
+                            
         } 
         
         $this->LoadTemplate('cadPessoa', $dados);
